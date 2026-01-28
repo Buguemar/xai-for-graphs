@@ -1,5 +1,8 @@
-# graphing-a-decision
-Public repository of our paper "Graphing a Decision: a Survey for Explainability on Graph-based Learning Models"
+# xai-for-graphs
+Public repository of our submitted paper to ACM "Explainable AI for Graph-Based Learning: A Survey Beyond Graph Neural Networks".
+
+
+Pre-print at HAL Science: ["Graph-Based Explainable AI: A Comprehensive Survey"](https://hal.science/hal-04660442/file/Graph_Based_Explainable_AI____HAL_version.pdf))
 
 ---
 
