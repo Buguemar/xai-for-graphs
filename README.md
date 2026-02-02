@@ -1,13 +1,43 @@
 # Explainable AI for Graph-Based Learning: A Survey Beyond Graph Neural Networks
-This repository accompanies our **updated and extended survey paper**, currently submitted to ACM TIST.
+
+📄 This repository accompanies our **updated and extended survey paper**, currently submitted to ACM TIST, 2026.
+
+The goal of this repository is to provide a **living, structured, and reproducible companion** to the paper, including:
+- A curated list of explainability methods
+- A unified taxonomy beyond GNN-centric approaches
+- Summary tables for reference to the community
 
 ---
-An **earlier preprint version (2024)** of this work is publicly available on HAL Science:
+🔗 An **earlier preprint version (2024)** of this work is publicly available on HAL Science:
 [“Graph-Based Explainable AI: A Comprehensive Survey”](https://hal.science/hal-04660442/file/Graph_Based_Explainable_AI____HAL_version.pdf)
 
 #### ⚠️ **Note:** The HAL preprint corresponds to an earlier version and does **not** include the latest revisions, extensions, and corrections present in the ACM submission.
 
 Please cite the ACM version once available. Until then, the HAL preprint may be used for reference.
+
+---
+
+## 🔍 Scope of the Survey
+
+This survey systematically reviews **graph-based explainability methods** that:
+- Go **beyond standard Graph Neural Networks (GNNs)**
+- Cover scoring, extraction, and generation-based **explanation modalities**
+- Along gradients, decomposition, path-reasoning, data integration, surrogates, perturbation, and graph creation-based **explainability approaches**
+- Address node-level, graph-level, and generative tasks
+- Are evaluated using quantitative and/or qualitative protocols
+
+---
+## 🧠 Categorization Overview
+
+We categorize scoring, extraction, and generation-based methods along the following dimensions:
+- **Explainability Approach** (Gradients, Decomposition, Perturbation, etc.)
+- **GNN dependency** (if the method targets GNN models only or not)
+- **Task** (graph classification, node classification, link prediction, generative tasks, and others)
+- **Data Type** (Real or Synthetic)
+- **Validation of the method** (Quantitative / Qualitative)
+
+
+A visual overview of our proposed categorization is available in [`images/categorization.pdf`](images/categorization.pdf).
 
 ---
 
