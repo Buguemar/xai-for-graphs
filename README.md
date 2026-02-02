@@ -1,20 +1,56 @@
-# xai-for-graphs
-Public repository of our submitted paper to ACM "Explainable AI for Graph-Based Learning: A Survey Beyond Graph Neural Networks".
+# Explainable AI for Graph-Based Learning: A Survey Beyond Graph Neural Networks
+This repository accompanies our **updated and extended survey paper**, currently submitted to ACM TIST.
 
+---
+An **earlier preprint version (2024)** of this work is publicly available on HAL Science:
+[“Graph-Based Explainable AI: A Comprehensive Survey”](https://hal.science/hal-04660442/file/Graph_Based_Explainable_AI____HAL_version.pdf)
 
-Pre-print at HAL Science: ["Graph-Based Explainable AI: A Comprehensive Survey"](https://hal.science/hal-04660442/file/Graph_Based_Explainable_AI____HAL_version.pdf))
+#### ⚠️ **Note:** The HAL preprint corresponds to an earlier version and does **not** include the latest revisions, extensions, and corrections present in the ACM submission.
+
+Please cite the ACM version once available. Until then, the HAL preprint may be used for reference.
 
 ---
 
-### Scoring-based Explainers
+## Scoring-Based Explainers
 
-1. Sundararajan, M., Taly, A., & Yan, Q. (2017, July). **Axiomatic attribution for deep networks**. In International conference on machine learning (pp. 3319-3328). PMLR. [[Paper]](https://proceedings.mlr.press/v70/sundararajan17a.html) [[Source Code]](https://github.com/ankurtaly/Integrated-Gradients)
-2. Akita, H., Nakago, K., Komatsu, T., Sugawara, Y., Maeda, S. I., Baba, Y., & Kashima, H. (2018). **Bayesgrad: Explaining predictions of graph convolutional networks**. In Neural Information Processing: 25th International Conference, ICONIP 2018, Siem Reap, Cambodia, December 13–16, 2018, Proceedings, Part V 25 (pp. 81-92). Springer International Publishing. [[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-04221-9_8) [[Source Code]](https://github.com/pfnet-research/bayesgrad)
-3. Baldassarre, F., & Azizpour, H. (2019). **Explainability techniques for graph convolutional networks**. arXiv preprint arXiv:1905.13686. [[Paper]](https://arxiv.org/abs/1905.13686) [[Source Code]](https://github.com/baldassarreFe/graph-network-explainability)
-4. Pope, P. E., Kolouri, S., Rostami, M., Martin, C. E., & Hoffmann, H. (2019). **Explainability methods for graph convolutional neural networks**. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 10772-10781). [[Paper]](https://openaccess.thecvf.com/content_CVPR_2019/html/Pope_Explainability_Methods_for_Graph_Convolutional_Neural_Networks_CVPR_2019_paper.html)
-5. Schnake, T., Eberle, O., Lederer, J., Nakajima, S., Schütt, K. T., Müller, K. R., & Montavon, G. (2021). **Higher-order explanations of graph neural networks via relevant walks**. IEEE transactions on pattern analysis and machine intelligence, 44(11), 7581-7596. [[Paper]](https://ieeexplore.ieee.org/abstract/document/9547794) [[Source Code]](https://git.tu-berlin.de/thomas_schnake/paper_gnn_lrp)
-6. Chereda, H., Bleckmann, A., Menck, K., Perera-Bel, J., Stegmaier, P., Auer, F., ... & Beißbarth, T. (2021). **Explaining decisions of graph convolutional neural networks: patient-specific molecular subnetworks responsible for metastasis prediction in breast cancer**. Genome medicine, 13, 1-16. [[Paper]](https://link.springer.com/article/10.1186/s13073-021-00845-7) [[Source Code]](https://gitlab.gwdg.de/UKEBpublic/graph-lrp)
-7. Gao, Y., Sun, T., Bhatt, R., Yu, D., Hong, S., & Zhao, L. (2021, December). **Gnes: Learning to explain graph neural networks**. In 2021 IEEE International Conference on Data Mining (ICDM) (pp. 131-140). IEEE. [[Paper]](https://ieeexplore.ieee.org/abstract/document/9679041?casa_token=ACw635YeMXQAAAAA:KcfwQJWcyJKlFjN7m4k2yrzet6R6Gw85qmKXXWvVLX7YUF3DuDCxZoNKMADp6WcgGP_Hw0KNxePRmA) [[Source Code]](https://github.com/YuyangGao/GNES)
+#### 📊 Comparison of Methods in This Category
+
+| Method | Year | Category | GNN-based | Graph-Classif. | Node-Classif. | Other Tasks | Data Type | Validation | Code |
+|--------|------|----------|-----------|------|-------|-------------|-----------|------------|------|
+| Integrated Gradients | 2017 | Gradients | ✓ | ✓ | – | – | Real | Ql | ✓ |
+| BayesGrad | 2018 | Gradients | ✓ | ✓ | – | Regression | Real / Synthetic | Qn / Ql | ✓ |
+| SA | 2019 | Gradients | ✓ | ✓ | ✓ | Regression | Real | Ql | ✓ |
+| C-Gradients | 2019 | Gradients | ✓ | ✓ | – | – | Real / Synthetic | Qn / Ql | – |
+| Guided BP | 2019 | Gradients | ✓ | ✓ | ✓ | – | Real | Ql | ✓ |
+| CAM | 2019 | Gradients | ✓ | ✓ | – | – | Real / Synthetic | Qn / Ql | – |
+| GradCAM | 2019 | Gradients | ✓ | ✓ | – | – | Real / Synthetic | Qn / Ql | – |
+| Excitation BP | 2019 | Decomposition | ✓ | ✓ | ✓ | – | Real / Synthetic | Qn / Ql | – |
+| c-Excitation BP | 2019 | Decomposition | ✓ | ✓ | – | – | Real / Synthetic | Qn / Ql | – |
+| LRP | 2019 | Decomposition | ✓ | ✓ | ✓ | Regression | Real | Ql | ✓ |
+| GNN-LRP | 2020 | Decomposition | ✓ | ✓ | – | – | Real / Synthetic | Qn | ✓ |
+| GLRP | 2021 | Decomposition | ✓ | ✓ | – | – | Real | Ql | ✓ |
+| GNES | 2021 | Gradients | ✓ | ✓ | – | – | Real | Qn / Ql | ✓ |
+| SE-SGFormer | 2025 | Path Reasoning | ✗ | – | – | Link Sign | Real | Qn | ✓ |
+| GF-LRP | 2025 | Decomposition | ✗ | – | – | Generative | Real | Qn / Ql | – |
+
+**Legend:** ✓ = Supported, – = Not supported, Qn = Quantitative, Ql = Qualitative
+
+#### :books: List of Papers in This Category
+
+1. (**Integrated Gradients**) Sundararajan, M., Taly, A., & Yan, Q. (2017, July). **Axiomatic attribution for deep networks**. In International conference on machine learning (pp. 3319-3328). PMLR. [[Paper]](https://proceedings.mlr.press/v70/sundararajan17a.html) [[Source Code]](https://github.com/ankurtaly/Integrated-Gradients)
+2. (**BayesGrad**) Akita, H., Nakago, K., Komatsu, T., Sugawara, Y., Maeda, S. I., Baba, Y., & Kashima, H. (2018). **Bayesgrad: Explaining predictions of graph convolutional networks**. In Neural Information Processing: 25th International Conference, ICONIP 2018, Siem Reap, Cambodia, December 13–16, 2018, Proceedings, Part V 25 (pp. 81-92). Springer International Publishing. [[Paper]](https://link.springer.com/chapter/10.1007/978-3-030-04221-9_8) [[Source Code]](https://github.com/pfnet-research/bayesgrad)
+3. (**SA**) [_Original_] Baehrens, D., Schroeter, T., Harmeling, S., Kawanabe, M., Hansen, K., & Müller, K. R. (2010). **How to explain individual classification decisions**. The Journal of Machine Learning Research, 11, 1803-1831. --- [_Applied_] Baldassarre, F., & Azizpour, H. (2019). **Explainability techniques for graph convolutional networks**. arXiv preprint arXiv:1905.13686. [[Paper]](https://arxiv.org/abs/1905.13686) [[Source Code]](https://github.com/baldassarreFe/graph-network-explainability)
+4. (**C-Gradients**) [_Original_] Simonyan, K., Vedaldi, A., & Zisserman, A. (2013). **Deep inside convolutional networks: Visualising image classification models and saliency maps**. arXiv preprint arXiv:1312.6034. --- [_Applied_] Pope, P. E., Kolouri, S., Rostami, M., Martin, C. E., & Hoffmann, H. (2019). **Explainability methods for graph convolutional neural networks**. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 10772-10781). [[Paper]](https://openaccess.thecvf.com/content_CVPR_2019/html/Pope_Explainability_Methods_for_Graph_Convolutional_Neural_Networks_CVPR_2019_paper.html)
+5. (**Guided BP**) [_Original_] Springenberg, J. T., Dosovitskiy, A., Brox, T., & Riedmiller, M. (2014). **Striving for simplicity: The all convolutional net**. arXiv preprint arXiv:1412.6806. --- [_Applied_] Baldassarre, F., & Azizpour, H. (2019). **Explainability techniques for graph convolutional networks**. arXiv preprint arXiv:1905.13686. [[Paper]](https://arxiv.org/abs/1905.13686) [[Source Code]](https://github.com/baldassarreFe/graph-network-explainability)
+6. (**CAM**) [_Original_] Zhou, B., Khosla, A., Lapedriza, A., Oliva, A., & Torralba, A. (2016). **Learning deep features for discriminative localization**. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 2921-2929). --- [_Applied_] Pope, P. E., Kolouri, S., Rostami, M., Martin, C. E., & Hoffmann, H. (2019). **Explainability methods for graph convolutional neural networks**. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 10772-10781). [[Paper]](https://openaccess.thecvf.com/content_CVPR_2019/html/Pope_Explainability_Methods_for_Graph_Convolutional_Neural_Networks_CVPR_2019_paper.html)
+7. (**Grad-CAM**) [_Original_] Selvaraju, R. R., Cogswell, M., Das, A., Vedantam, R., Parikh, D., & Batra, D. (2017). **Grad-cam: Visual explanations from deep networks via gradient-based localization**. In Proceedings of the IEEE international conference on computer vision (pp. 618-626). --- [_Applied_] Pope, P. E., Kolouri, S., Rostami, M., Martin, C. E., & Hoffmann, H. (2019). **Explainability methods for graph convolutional neural networks**. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 10772-10781). [[Paper]](https://openaccess.thecvf.com/content_CVPR_2019/html/Pope_Explainability_Methods_for_Graph_Convolutional_Neural_Networks_CVPR_2019_paper.html)
+8. (**Excitation BP & c-Excitation BP**) Pope, P. E., Kolouri, S., Rostami, M., Martin, C. E., & Hoffmann, H. (2019). **Explainability methods for graph convolutional neural networks**. In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (pp. 10772-10781). [[Paper]](https://openaccess.thecvf.com/content_CVPR_2019/html/Pope_Explainability_Methods_for_Graph_Convolutional_Neural_Networks_CVPR_2019_paper.html)
+9. (**LRP**) [_Original_] Bach, S., Binder, A., Montavon, G., Klauschen, F., Müller, K. R., & Samek, W. (2015). **On pixel-wise explanations for non-linear classifier decisions by layer-wise relevance propagation**. PloS one, 10(7), e0130140. --- [_Applied_] Baldassarre, F., & Azizpour, H. (2019). **Explainability techniques for graph convolutional networks**. arXiv preprint arXiv:1905.13686. [[Paper]](https://arxiv.org/abs/1905.13686) [[Source Code]](https://github.com/baldassarreFe/graph-network-explainability)
+12. (**GNN-LRP**) Schnake, T., Eberle, O., Lederer, J., Nakajima, S., Schütt, K. T., Müller, K. R., & Montavon, G. (2021). **Higher-order explanations of graph neural networks via relevant walks**. IEEE transactions on pattern analysis and machine intelligence, 44(11), 7581-7596. [[Paper]](https://ieeexplore.ieee.org/abstract/document/9547794) [[Source Code]](https://git.tu-berlin.de/thomas_schnake/paper_gnn_lrp)
+13. (**GLRP**) Chereda, H., Bleckmann, A., Menck, K., Perera-Bel, J., Stegmaier, P., Auer, F., ... & Beißbarth, T. (2021). **Explaining decisions of graph convolutional neural networks: patient-specific molecular subnetworks responsible for metastasis prediction in breast cancer**. Genome medicine, 13, 1-16. [[Paper]](https://link.springer.com/article/10.1186/s13073-021-00845-7) [[Source Code]](https://gitlab.gwdg.de/UKEBpublic/graph-lrp)
+14. (**GNES**) Gao, Y., Sun, T., Bhatt, R., Yu, D., Hong, S., & Zhao, L. (2021, December). **Gnes: Learning to explain graph neural networks**. In 2021 IEEE International Conference on Data Mining (ICDM) (pp. 131-140). IEEE. [[Paper]](https://ieeexplore.ieee.org/abstract/document/9679041?casa_token=ACw635YeMXQAAAAA:KcfwQJWcyJKlFjN7m4k2yrzet6R6Gw85qmKXXWvVLX7YUF3DuDCxZoNKMADp6WcgGP_Hw0KNxePRmA) [[Source Code]](https://github.com/YuyangGao/GNES)
+15. (**SE-SGFormer**) Li, L., Liu, J., Ji, X., Wang, M., & Zhang, Z. (2025, April). **Self-Explainable Graph Transformer for Link Sign Prediction**. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 39, No. 11, pp. 12084-12092). [[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/33316) [[Source Code]](https://github.com/liule66/SE-SGformer)
+16. (**GF-LRP**) Rodrigo-Bonet, E., & Deligiannis, N. (2024). **Gf-lrp: a method for explaining predictions made by variational graph auto-encoders**. IEEE Transactions on Emerging Topics in Computational Intelligence, 9(1), 281-291. [[Paper]](https://ieeexplore.ieee.org/abstract/document/10586750?casa_token=6UAKIkOW4jYAAAAA:jMJ61403waEuG9Tczyo9n6vJYkkgee2sZjokQ-JN1oJFRtm9Wgt4ZjsIZeUVDBmvzk4Zb42IP0Krkw) 
 
 ### Extraction-based Explainers
 
